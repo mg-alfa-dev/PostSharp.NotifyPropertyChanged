@@ -17,15 +17,15 @@ namespace PostSharp.NotifyPropertyChanged.Tests
 
             observedCollection.Add(1.0M);
 
-            "it should only notify once that ObservingProperty, ObservingCalulatedProperty and ObservingMethodCallCalculatedProperty on the ObservingClass have changed"
-                .AssertThat(propertiesThatChanged, Is.EquivalentTo(new[] { "ObservingProperty", "ObservingCalculatedProperty", "ObservingMethodCallCalculatedProperty" }));
+            "it should only notify once that AlphaObservingProperty, BetaObservingCalculatedProperty and GammaObservingMethodCallCalculatedProperty on the ObservingClass have changed"
+                .AssertThat(propertiesThatChanged, Is.EquivalentTo(new[] { "AlphaObservingProperty", "BetaObservingCalculatedProperty", "GammaObservingMethodCallCalculatedProperty" }));
 
             "it should update the backing field for the ObservedCollection property"
-                .AssertThat(observingClass.ObservingProperty, Is.EqualTo(observedCollection.Sum()));
+                .AssertThat(observingClass.AlphaObservingProperty, Is.EqualTo(observedCollection.Sum()));
         }
 
         [NotifyPropertyChanged]
-        [NotifyObservedReferenceChanged]
+        //[NotifyObservedReferenceChanged]
         [NotifyObservedCollectionChanged]
         public class CollectionObservingClass : INotifyPropertyChanged
         {
@@ -38,9 +38,9 @@ namespace PostSharp.NotifyPropertyChanged.Tests
 
             public ObservableCollection<decimal> ObservedCollection { get; set; }
 
-            public decimal ObservingProperty { get { return ObservedCollection.Sum(); } }
-            public int ObservingCalculatedProperty { get { return CalculateMethod() + 1; } }
-            public bool ObservingMethodCallCalculatedProperty { get { return ObservedCollection.Contains(2.0M); } }
+            public decimal AlphaObservingProperty { get { return ObservedCollection.Sum(); } }
+            public int BetaObservingCalculatedProperty { get { return CalculateMethod() + 1; } }
+            public bool GammaObservingMethodCallCalculatedProperty { get { return ObservedCollection.Contains(2.0M); } }
             private int CalculateMethod() { return CalculatedProperty + 1; }
             protected int CalculatedProperty { get { return ObservedCollection.Count; } }
 
