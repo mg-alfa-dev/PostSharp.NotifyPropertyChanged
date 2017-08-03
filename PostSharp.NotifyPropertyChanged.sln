@@ -1,14 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostSharp.NotifyPropertyChanged", "source\PostSharp.NotifyPropertyChanged\PostSharp.NotifyPropertyChanged.csproj", "{8A9AE777-F113-4DFE-A448-3F575E0D5E31}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostSharp.NotifyPropertyChanged.Tests", "source\PostSharp.NotifyPropertyChanged.Tests\PostSharp.NotifyPropertyChanged.Tests.csproj", "{B973FF7B-8322-4047-9639-BDB309F23F01}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4A7421B4-D58C-4697-97B4-BCD37B497398}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\packages.config = .nuget\packages.config
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

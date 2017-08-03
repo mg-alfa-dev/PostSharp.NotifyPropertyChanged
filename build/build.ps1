@@ -1,5 +1,7 @@
+Framework '4.6.2x86'
+
 properties {
-	$version = if($env:BUILD_NUMBER) {$env:BUILD_NUMBER} else { "0.6.9.0" }
+	$version = if($env:BUILD_NUMBER) {$env:BUILD_NUMBER} else { "0.7.0.2" }
 }
 
 include .\master_build.ps1

@@ -4,7 +4,6 @@ properties {
 	$tool_dir = "$base_dir\packages"
 	$sln_file = "$base_dir\PostSharp.NotifyPropertyChanged.sln"
 	$sharedAssemblyInfo = "$source_dir\SolutionAssemblyInfo.cs"
-	$msbuild = "$env:windir\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"
 }
 
 task version {
@@ -17,7 +16,7 @@ task version {
 }
 
 task compile -depends version {
-	& $msbuild $sln_file /p:Configuration=Release
+	& msbuild $sln_file /p:Configuration=Release
   
 	if($lastExitCode -ne 0) {
 		throw "Compile Failed."
