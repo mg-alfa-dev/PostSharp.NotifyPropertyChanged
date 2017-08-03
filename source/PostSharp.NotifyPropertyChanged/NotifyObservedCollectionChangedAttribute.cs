@@ -13,6 +13,7 @@ namespace PostSharp.NotifyPropertyChanged
     [Serializable]
     [AspectTypeDependency(AspectDependencyAction.Require, AspectDependencyPosition.Any, typeof(NotifyPropertyChangedAttribute))]
     [AspectTypeDependency(AspectDependencyAction.Order, AspectDependencyPosition.After, typeof(NotifyPropertyChangedAttribute))]
+    [AspectTypeDependency(AspectDependencyAction.Order, AspectDependencyPosition.After, typeof(NotifyObservedReferenceChangedAttribute))]
     [MulticastAttributeUsage(MulticastTargets.Class, Inheritance = MulticastInheritance.Multicast)]
     public sealed class NotifyObservedCollectionChangedAttribute : InstanceLevelAspect
     {
